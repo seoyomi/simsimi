@@ -1,0 +1,12 @@
+<h1>Talk to your Simsimi</h1>
+<p>Start conversation! :)</p>
+<ul>
+	<% @histories.each do |history| %>
+		<p>You : <%=history.question%></p>
+		<p>Simsimi : <%=history.answer%></p>
+	<% end %>
+	<form action="/conversations/receive">
+		<input type="text" name="question" placeholder="Talk to Simsimi!">
+		<input type = "submit" name="talk">
+	</form>
+</ul>
